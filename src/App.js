@@ -9,25 +9,41 @@ import {
 import Button from 'react-bootstrap/Button';
 
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/hello">Hello</Link>
+            </li>
+            <li>
+              <Link to="/goodbye">Goodbye</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/goodbye">
+            <Goodbye />
+          </Route>
+          <Route path="/hello">
+            <Hello />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+function Hello() {
+  return <h2>Hello, World!</h2>;
+}
+
+function Goodbye() {
+  return <h2>Goodbye!</h2>;
+}
+
