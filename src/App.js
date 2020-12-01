@@ -16,10 +16,10 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/hello">Hello</Link>
+              <Button href="/hello">Hello</Button>
             </li>
             <li>
-              <Link to="/goodbye">Goodbye</Link>
+              <Button href="/goodbye">Goodbye</Button>
             </li>
           </ul>
         </nav>
@@ -40,10 +40,10 @@ export default function App() {
 }
 
 function Hello() {
-  return <h2>Hello, World!</h2>;
+  return <h2> Hello, World!</h2>;
 }
 
 function Goodbye() {
-  return <h2>Goodbye!</h2>;
+  return <h2> Goodbye!</h2>;
 }
 
