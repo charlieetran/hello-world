@@ -2,11 +2,11 @@ import './App.css';
 import {
   Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import history from './history';
+import axios from "axios"
 
 
 export default function App() {
@@ -15,17 +15,19 @@ export default function App() {
       <div>
         <nav>
           <ul>
-              <Button onClick={onButtonClick}>Switch</Button>
+            <li>
+              <Button onClick={onButtonClick}>Switch Page</Button>
+            </li>
+            <li>
+              <Button onClick={callBackend}>Call Backend</Button>
+            </li>
           </ul>
         </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/goodbye">
             <Goodbye />
           </Route>
-          <Route path="/hello">
+          <Route path="/">
             <Hello />
           </Route>
         </Switch>
@@ -43,8 +45,14 @@ function Goodbye() {
 }
 
 function onButtonClick() {
-  if(history.location.pathname === "/hello"){
+  if(history.location.pathname === "/"){
     return history.push('/goodbye');
   } 
-    return history.push('/hello');
+    return history.push('/');
+}
+
+function callBackend() {
+  const url = "http://localhost:8080/users";
+  axios.get(url);
+
 }
