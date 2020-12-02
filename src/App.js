@@ -1,26 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import history from './history';
 
 
 export default function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div>
         <nav>
           <ul>
-            <li>
-              <Button href="/hello">Hello</Button>
-            </li>
-            <li>
-              <Button href="/goodbye">Goodbye</Button>
-            </li>
+              <Button onClick={onButtonClick}>Switch</Button>
           </ul>
         </nav>
 
@@ -40,10 +35,16 @@ export default function App() {
 }
 
 function Hello() {
-  return <h2> Hello, World!</h2>;
+  return <h2>Hello, World!</h2>;
 }
 
 function Goodbye() {
-  return <h2> Goodbye!</h2>;
+  return <h2>Goodbye!</h2>;
 }
 
+function onButtonClick() {
+  if(history.location.pathname === "/hello"){
+    return history.push('/goodbye');
+  } 
+    return history.push('/hello');
+}
