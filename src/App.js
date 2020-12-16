@@ -10,7 +10,9 @@ import {
 import history from './history';
 import NoteForm from './note.components/NoteForm.js';
 import GetAll from './note.components/GetAll.js';
+import GetOne from './note.components/GetOne.js';
 import DeleteAll from './note.components/DeleteAll.js';
+
 
 
 export default function App() {
@@ -34,6 +36,7 @@ export default function App() {
       </ul>
       </nav>
     <NoteForm></NoteForm>
+    <GetOne></GetOne>
     <GetAll></GetAll>
     <DeleteAll></DeleteAll>
     </Router>
