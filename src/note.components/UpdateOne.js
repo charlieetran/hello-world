@@ -56,6 +56,7 @@ import {
                 <Form.Control 
                 required 
                 as="textarea" 
+                placeholder="Enter note contents"
                 rows={3}
                 value={this.state.value}
                 onChange={this.handleValue}

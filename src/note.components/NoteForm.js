@@ -40,6 +40,7 @@ export default class NoteForm extends React.Component {
                 required 
                 as="textarea" 
                 rows={3}
+                placeholder="Enter note contents"
                 value={this.state.value}
                 onChange={this.handleChange}
                 />
