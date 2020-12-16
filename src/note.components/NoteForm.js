@@ -34,6 +34,7 @@ export default class NoteForm extends React.Component {
             <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Note: </Form.Label>
+                <div>
                 <Form.Control 
                 required 
                 as="textarea" 
@@ -41,6 +42,7 @@ export default class NoteForm extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 />
+                </div>
                 <Form.Text className="text-muted">
                   Must be non-empty.
                 </Form.Text>

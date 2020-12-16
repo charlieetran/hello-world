@@ -8,7 +8,9 @@ import {
   Button
 } from 'react-bootstrap/';
 import history from './history';
-import NoteForm from './NoteForm.js';
+import NoteForm from './note.components/NoteForm.js';
+import GetAll from './note.components/GetAll.js';
+import DeleteAll from './note.components/DeleteAll.js';
 
 
 export default function App() {
@@ -32,6 +34,8 @@ export default function App() {
       </ul>
       </nav>
     <NoteForm></NoteForm>
+    <GetAll></GetAll>
+    <DeleteAll></DeleteAll>
     </Router>
     
   );
