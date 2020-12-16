@@ -1,4 +1,5 @@
 import './App.css';
+/*
 import {
   Router,
   Switch,
@@ -7,7 +8,9 @@ import {
 import {
   Button
 } from 'react-bootstrap/';
+
 import history from './history';
+*/
 import NoteForm from './note.components/NoteForm.js'
 import GetAll from './note.components/GetAll.js';
 import GetOne from './note.components/GetOne.js';
@@ -19,35 +22,21 @@ import UpdateOne from './note.components/UpdateOne.js';
 
 export default function App() {
   return (
-    <Router history={history}>
-      <div>
-        <Switch>
-          <Route path="/goodbye">
-            <Goodbye />
-          </Route>
-          <Route path="/">
-            <Hello />
-          </Route>
-        </Switch>
-      </div>
+    <div>
       <nav>
-      <ul>
-        <li>
-          <Button onClick={switchPage}>Switch Page</Button>
-        </li>
-      </ul>
+       <h2>Note Maker!</h2>
       </nav>
-    <NoteForm></NoteForm>
-    <GetOne></GetOne>
-    <UpdateOne></UpdateOne>
-    <DeleteOne></DeleteOne>
-    <GetAll></GetAll>
-    <DeleteAll></DeleteAll>
-    </Router>
-    
+      <NoteForm></NoteForm>
+      <GetOne></GetOne>
+      <UpdateOne></UpdateOne>
+      <DeleteOne></DeleteOne>
+      <GetAll></GetAll>
+      <DeleteAll></DeleteAll>
+    </div>
   );
 }
 
+/*
 function Hello() {
   return <h2>Hello, World!</h2>;
 }
@@ -62,4 +51,4 @@ function switchPage() {
   } 
     return history.push('/');
 }
-
+*/
