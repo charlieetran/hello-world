@@ -44,9 +44,8 @@ import {
                 <Col sm={5}>
                 <Form.Control 
                 required 
-                type="id"
                 placeholder="Enter note ID"
-                id={this.state.id}
+                value={this.state.id}
                 onChange={this.handleID}
                 />
                 </Col>
