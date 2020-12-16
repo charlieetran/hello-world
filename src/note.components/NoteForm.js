@@ -5,7 +5,7 @@ import {
     Form,
     Col
   } from 'react-bootstrap/';
-import GetOne from './GetOne.js'
+
 
 export default class NoteForm extends React.Component {
     constructor(props) {
@@ -34,7 +34,7 @@ export default class NoteForm extends React.Component {
             <ul>
             <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="NoteForm">
-                <Form.Label>Note: </Form.Label>
+                <Form.Label>New Note: </Form.Label>
                 <Col sm={5}>
                 <Form.Control 
                 required 
