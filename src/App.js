@@ -5,11 +5,10 @@ import {
   Route
 } from "react-router-dom";
 import {
-  Button,
-  Form
+  Button
 } from 'react-bootstrap/';
 import history from './history';
-import axios from "axios"
+import NoteForm from './NoteForm.js';
 
 
 export default function App() {
@@ -32,20 +31,7 @@ export default function App() {
         </li>
       </ul>
       </nav>
-      <ul>
-      <Form>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Note: </Form.Label>
-          <Form.Control as="textarea" rows={3} />
-          <Form.Text className="text-muted">
-            Must be non-empty.
-          </Form.Text>
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-      </ul>
+    <NoteForm></NoteForm>
     </Router>
     
   );
@@ -66,20 +52,3 @@ function switchPage() {
     return history.push('/');
 }
 
-
-function SubmitNote(text) {
-  const url = "http://localhost:8080/notes";
-  <Content></Content>
-  axios.post(url, {
-    content: text}
-  );
-}
-
-function Content() {
-  return (
-  <label>
-      Note: 
-      <input type="text" />;
-  </label>
-  );
-}
