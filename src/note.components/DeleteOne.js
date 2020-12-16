@@ -4,9 +4,9 @@ import {
     Button,
     Form
   } from 'react-bootstrap/';
-import GetOne from './GetOne.js'
 
-export default class NoteForm extends React.Component {
+
+  export default class DeleteOne extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -21,10 +21,11 @@ export default class NoteForm extends React.Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        const url = "http://localhost:8080/notes";
-        axios.post(url, {
-            content: this.state.value}
-        )
+        var id = this.state.value
+        const url = "http://localhost:8080/notes/";
+        axios.delete(url+id).then(note =>{
+            console.log(note.data);
+        });
         
     }
 
@@ -32,21 +33,18 @@ export default class NoteForm extends React.Component {
         return (
             <ul>
             <Form onSubmit={this.handleSubmit}>
-              <Form.Group controlId="NoteForm">
-                <Form.Label>Note: </Form.Label>
+              <Form.Group controlId="NoteDelete">
+                <Form.Label>Delete Note by ID: </Form.Label>
                 <Form.Control 
                 required 
-                as="textarea" 
-                rows={3}
+                type="id"
+                placeholder="Enter note ID"
                 value={this.state.value}
                 onChange={this.handleChange}
                 />
-                <Form.Text className="text-muted">
-                  Must be non-empty.
-                </Form.Text>
               </Form.Group>
               <Button variant="primary" type="submit">
-                Submit
+                Delete
               </Button>
             </Form>
             </ul>
@@ -54,5 +52,4 @@ export default class NoteForm extends React.Component {
       }
 
 }
-
 

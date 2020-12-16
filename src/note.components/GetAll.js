@@ -20,7 +20,7 @@ import {
         return(
             <ul>
                 <li>
-                    <Button onClick ={this.fetchNotes}>Get Notes</Button>
+                    <Button onClick ={this.fetchNotes}>Get All Notes</Button>
                 </li>
                 
             </ul>

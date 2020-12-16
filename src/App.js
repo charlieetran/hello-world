@@ -12,6 +12,7 @@ import NoteForm from './note.components/NoteForm.js';
 import GetAll from './note.components/GetAll.js';
 import GetOne from './note.components/GetOne.js';
 import DeleteAll from './note.components/DeleteAll.js';
+import DeleteOne from './note.components/DeleteOne.js';
 
 
 
@@ -37,6 +38,7 @@ export default function App() {
       </nav>
     <NoteForm></NoteForm>
     <GetOne></GetOne>
+    <DeleteOne></DeleteOne>
     <GetAll></GetAll>
     <DeleteAll></DeleteAll>
     </Router>
