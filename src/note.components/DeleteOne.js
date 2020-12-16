@@ -2,7 +2,8 @@ import React from 'react';
 import axios from "axios"
 import {
     Button,
-    Form
+    Form,
+    Col
   } from 'react-bootstrap/';
 
 
@@ -34,7 +35,8 @@ import {
             <ul>
             <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="NoteDelete">
-                <Form.Label>Delete Note by ID: </Form.Label>
+                <Form.Label>Delete Note: </Form.Label>
+                <Col sm={5}>
                 <Form.Control 
                 required 
                 type="id"
@@ -42,6 +44,7 @@ import {
                 value={this.state.value}
                 onChange={this.handleChange}
                 />
+                </Col>
               </Form.Group>
               <Button variant="primary" type="submit">
                 Delete

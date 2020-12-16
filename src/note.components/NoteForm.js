@@ -2,7 +2,8 @@ import React from 'react';
 import axios from "axios"
 import {
     Button,
-    Form
+    Form,
+    Col
   } from 'react-bootstrap/';
 import GetOne from './GetOne.js'
 
@@ -34,6 +35,7 @@ export default class NoteForm extends React.Component {
             <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="NoteForm">
                 <Form.Label>Note: </Form.Label>
+                <Col sm={5}>
                 <Form.Control 
                 required 
                 as="textarea" 
@@ -41,6 +43,7 @@ export default class NoteForm extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 />
+                </Col>
                 <Form.Text className="text-muted">
                   Must be non-empty.
                 </Form.Text>
